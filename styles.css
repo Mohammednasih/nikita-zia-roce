@@ -1,0 +1,1059 @@
+/* CSS Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #dfebd9;
+  font-family: 'Cormorant Garamond', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #384935;
+}
+
+/* Mobile Frame Container (Smooth Natural Vertical Scrolling) */
+.mobile-frame {
+  width: 100%;
+  max-width: 440px;
+  height: 100vh;
+  max-height: 920px;
+  position: relative;
+  background-color: #f6f4ee;
+  box-shadow: 0 14px 50px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide Scrollbars */
+.mobile-frame::-webkit-scrollbar {
+  display: none;
+}
+.mobile-frame {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.mobile-frame.frame-locked {
+  overflow: hidden !important;
+}
+
+/* ENTRANCE BLUR OVERLAY SCREEN */
+.entrance-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: rgba(245, 239, 228, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  cursor: pointer;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.entrance-overlay.hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  display: none !important;
+}
+
+.entrance-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 320px;
+  width: 100%;
+  animation: entranceFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes entranceFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.entrance-monogram {
+  margin-bottom: 10px;
+}
+
+.entrance-logo {
+  width: 75px;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  filter: sepia(0.8) hue-rotate(60deg) saturate(0.9) brightness(0.65) contrast(1.2);
+  opacity: 0.95;
+}
+
+.entrance-couples-names {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 3.3rem;
+  font-weight: 400;
+  color: #354632;
+  line-height: 1.1;
+  margin-bottom: 4px;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+.entrance-tagline {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 3.5px;
+  color: #3d4f3a;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.open-invitation-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 34px;
+  border-radius: 30px;
+  border: 1px solid #354632;
+  background: #354632;
+  color: #f5efe4;
+  font-family: 'Cinzel', serif;
+  font-size: 0.74rem;
+  letter-spacing: 3.5px;
+  font-weight: 600;
+  cursor: pointer;
+  pointer-events: auto !important;
+  touch-action: manipulation;
+  box-shadow: 0 8px 25px rgba(53, 70, 50, 0.25);
+  transition: all 0.3s ease;
+  user-select: none;
+  position: relative;
+  z-index: 10000;
+}
+
+.open-invitation-btn span {
+  pointer-events: none;
+}
+
+.open-invitation-btn:hover {
+  background: #253322;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(53, 70, 50, 0.32);
+}
+
+.open-invitation-btn:active {
+  transform: translateY(0);
+}
+
+/* Invitation Section Common Styles */
+.invitation-section {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  background-color: #f5efe4;
+}
+
+/* ==========================================
+   ELEGANT SCROLL ANIMATIONS FOR ALL TEXTS
+   ========================================== */
+
+.scroll-anim {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-anim.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays for slow, luxurious sequential floating */
+.scroll-anim:nth-child(1) { transition-delay: 0.08s; }
+.scroll-anim:nth-child(2) { transition-delay: 0.25s; }
+.scroll-anim:nth-child(3) { transition-delay: 0.42s; }
+.scroll-anim:nth-child(4) { transition-delay: 0.58s; }
+.scroll-anim:nth-child(5) { transition-delay: 0.75s; }
+
+/* ==========================================
+   PAGE 1: HERO SECTION
+   ========================================== */
+
+.section-first {
+  min-height: 100vh;
+  height: 100vh;
+  position: relative;
+}
+
+.section-first::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25vh;
+  min-height: 160px;
+  background: linear-gradient(to bottom, rgba(245, 239, 228, 0) 0%, rgba(245, 239, 228, 0.4) 40%, rgba(245, 239, 228, 0.85) 75%, #f5efe4 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.bg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.content-layer {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 13.5vh 20px 4vh 20px;
+  text-align: center;
+}
+
+.logo-wrapper {
+  margin-bottom: 14px;
+  margin-top: 3.5vh;
+}
+
+.monogram-logo {
+  width: 90px;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  filter: sepia(0.8) hue-rotate(60deg) saturate(0.9) brightness(0.65) contrast(1.2);
+  opacity: 0.95;
+}
+
+.names-wrapper {
+  margin-bottom: 18px;
+  width: 100%;
+  max-width: 340px;
+}
+
+.couple-names {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 3.6rem;
+  font-weight: 400;
+  color: #354632;
+  line-height: 1.1;
+  letter-spacing: 0.2px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
+}
+
+.invitation-subtitle {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.caps-text {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 3.2px;
+  color: #3d4f3a;
+  line-height: 1.65;
+}
+
+.bold-text {
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 3.4px;
+}
+
+.location-wrapper {
+  margin-bottom: 22px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.in-text {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 3.8px;
+  color: #3d4f3a;
+  margin-bottom: 4px;
+}
+
+.location-name {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 2.35rem;
+  color: #354632;
+  line-height: 1.15;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
+}
+
+.date-wrapper {
+  margin-bottom: auto;
+  width: 100%;
+  max-width: 310px;
+}
+
+.date-numeric-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: 'Cinzel', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 3.5px;
+  color: #354632;
+}
+
+.date-numeric-row .dot {
+  color: #b07d50;
+  font-size: 1rem;
+}
+
+.scroll-cta {
+  margin-top: auto;
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.spacing-wide {
+  letter-spacing: 3.4px;
+  font-size: 0.68rem;
+  font-weight: 500;
+}
+
+.scroll-arrow {
+  margin-top: 6px;
+  animation: bounceArrow 2s infinite ease-in-out;
+}
+
+@keyframes bounceArrow {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.75;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}
+
+/* ==========================================
+   PAGE 2: COUNTDOWN SECTION
+   ========================================== */
+
+.section-countdown {
+  background-color: #f5efe4;
+  min-height: auto;
+  height: auto;
+  padding-bottom: 0;
+  position: relative;
+}
+
+.section-countdown::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to bottom, rgba(245, 239, 228, 0) 0%, rgba(245, 239, 228, 0.6) 50%, #f5efe4 100%);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.cream-bg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f5efe4;
+  z-index: 1;
+}
+
+/* Seamless Background Overlay */
+.section-countdown::before,
+.section-celebrations::before,
+.section-venue::before,
+.section-dresscode::before,
+.section-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(251, 248, 240, 0.5) 0%, rgba(244, 239, 227, 0.8) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.countdown-content-layer {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 35px;
+  padding-bottom: 220px;
+  text-align: center;
+}
+
+.shore-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 112%;
+  max-width: 490px;
+  z-index: 2;
+  pointer-events: none;
+  text-align: center;
+}
+
+.shore-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  opacity: 0.98;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 95%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 95%);
+}
+
+.palm-container {
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+  pointer-events: none;
+  width: 38%;
+  max-width: 158px;
+  height: auto;
+}
+
+.palm-container-left {
+  left: -18px;
+}
+
+.palm-container-right {
+  right: -18px;
+}
+
+.coconut-tree {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  transform-origin: bottom center;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 96%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 96%);
+}
+
+.tree-left {
+  animation: swayLeft 7s ease-in-out infinite alternate;
+}
+
+.tree-right {
+  animation: swayRight 8s ease-in-out infinite alternate;
+}
+
+@keyframes swayLeft {
+  0% {
+    transform: rotate(0deg) translateY(0);
+  }
+  100% {
+    transform: rotate(2.8deg) translateY(-2px) translateX(1px);
+  }
+}
+
+@keyframes swayRight {
+  0% {
+    transform: scaleX(-1) rotate(0deg) translateY(0);
+  }
+  100% {
+    transform: scaleX(-1) rotate(3deg) translateY(-2px) translateX(-1px);
+  }
+}
+
+.countdown-header {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.countdown-title {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 2.75rem;
+  font-weight: 400;
+  color: #354632;
+  line-height: 1;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+}
+
+.countdown-subtitle {
+  font-family: 'Cinzel', serif;
+  font-size: 0.66rem;
+  letter-spacing: 3px;
+  color: #3d4f3a;
+  margin-top: 3px;
+}
+
+.countdown-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 260px;
+  margin-bottom: 15px;
+}
+
+.count-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 55px;
+}
+
+.count-val {
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 2.25rem;
+  font-weight: 500;
+  color: #354632;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.count-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.60rem;
+  letter-spacing: 2.4px;
+  color: #3d4f3a;
+  font-weight: 500;
+}
+
+.count-divider {
+  width: 1px;
+  height: 30px;
+  background-color: #8fa08b;
+  opacity: 0.45;
+}
+
+.bottom-line-wrapper {
+  position: relative;
+  margin-top: 10px;
+}
+
+.bottom-deco-line {
+  width: 75px;
+  height: 1.5px;
+  background-color: #8fa08b;
+  opacity: 0.55;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   PAGE 3: THE CELEBRATIONS SECTION
+   ========================================== */
+
+.section-celebrations {
+  background-color: #f5efe4;
+  min-height: auto;
+  height: auto;
+  margin-top: 0;
+  padding-top: 70px;
+}
+
+.light-garland-wrapper {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 104%;
+  max-width: 460px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.light-garland-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.95;
+}
+
+.celebrations-content-layer {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  height: auto;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 190px 20px 60px 20px;
+  text-align: center;
+}
+
+.celebrations-header {
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
+
+.celebrations-title {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 2.75rem;
+  font-weight: 400;
+  color: #354632;
+  line-height: 1.1;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+}
+
+.events-program-list {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 40px;
+}
+
+.event-program-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.event-program-title {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 2.35rem;
+  font-weight: 400;
+  color: #354632;
+  line-height: 1.15;
+  margin-bottom: 4px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
+}
+
+.event-program-details {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  letter-spacing: 1.4px;
+  color: #3d4f3a;
+  font-weight: 500;
+}
+
+.event-item-divider {
+  width: 45px;
+  height: 1px;
+  background-color: #8fa08b;
+  opacity: 0.45;
+}
+
+/* ==========================================
+   PAGE 4: THE VENUE SECTION (STONE WOOD RESORT)
+   ========================================== */
+
+.section-venue {
+  background-color: #f5efe4;
+  min-height: auto;
+  height: auto;
+}
+
+.venue-content-layer {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  height: auto;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 60px 20px 20px 20px;
+  text-align: center;
+}
+
+.venue-header {
+  margin-bottom: 30px;
+}
+
+.venue-title {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 2.75rem;
+  font-weight: 400;
+  color: #354632;
+  line-height: 1.1;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+}
+
+.venue-image-wrapper {
+  width: 100%;
+  max-width: 340px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.venue-standalone-img {
+  width: 85%;
+  max-width: 300px;
+  height: auto;
+  display: block;
+  mix-blend-mode: multiply;
+}
+
+.venue-details-box {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.venue-name-main {
+  font-family: 'Cinzel', serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #354632;
+  margin-bottom: 6px;
+}
+
+.venue-name-sub {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 3.2px;
+  color: #3d4f3a;
+  margin-bottom: 8px;
+}
+
+.venue-location-tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #b07d50; /* Terracotta rose gold accent matching reference */
+}
+
+.celebrations-sub-tagline {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 2rem;
+  color: #b07d50;
+  margin-top: -6px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.venue-actions {
+  margin-bottom: 15px;
+}
+
+.map-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 20px;
+  border-radius: 24px;
+  border: 1px solid #354632;
+  color: #354632;
+  font-family: 'Cinzel', serif;
+  font-size: 0.66rem;
+  letter-spacing: 3.2px;
+  text-decoration: none;
+  font-weight: 500;
+  background: transparent;
+  box-shadow: none;
+  transition: all 0.25s ease;
+}
+
+.map-link-btn:hover {
+  background: #354632;
+  color: #f5efe4;
+}
+
+.map-pin-icon {
+  width: 13px;
+  height: 13px;
+  stroke-width: 1.5;
+}
+
+/* ==========================================
+   PAGE 5: DRESS CODE & COLOR PALETTE SECTION
+   ========================================== */
+
+.section-dresscode {
+  background-color: #f5efe4;
+  min-height: auto;
+  height: auto;
+}
+
+.mantra-line-wrapper {
+  margin-top: 25px;
+  width: 100%;
+}
+
+.bottom-mantra {
+  font-family: 'Cinzel', serif;
+  font-size: 0.58rem;
+  letter-spacing: 2.8px;
+  color: #3d4f3a;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.dresscode-content-layer {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  height: auto;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 35px 20px 35px 20px;
+  text-align: center;
+}
+
+.dresscode-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.dresscode-caps-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.76rem;
+  letter-spacing: 3.5px;
+  color: #3d4f3a;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.dresscode-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #b07d50; /* Terracotta rose gold accent matching reference */
+  margin-bottom: 6px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.dresscode-tagline {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #354632;
+  line-height: 1.2;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
+}
+
+/* ==========================================
+   PAGE 6: FINAL PAGE / FOOTER SECTION
+   ========================================== */
+
+.section-footer {
+  background-color: #f5efe4;
+  min-height: auto;
+  height: auto;
+}
+
+.footer-content-layer {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  height: auto;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 20px 60px 20px;
+  text-align: center;
+}
+
+.footer-logo-wrapper {
+  margin-bottom: 14px;
+}
+
+.footer-monogram-logo {
+  width: 90px;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  filter: sepia(0.8) hue-rotate(60deg) saturate(0.9) brightness(0.65) contrast(1.2);
+  opacity: 0.95;
+}
+
+.footer-names-wrapper {
+  margin-bottom: 8px;
+}
+
+.footer-couple-names {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #354632;
+  line-height: 1.1;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.footer-date-wrapper {
+  margin-bottom: 30px;
+}
+
+.footer-wedding-date {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  letter-spacing: 3.4px;
+  color: #3d4f3a;
+  font-weight: 500;
+}
+
+.footer-credits-wrapper {
+  margin-top: 15px;
+  margin-bottom: 25px;
+  opacity: 1 !important;
+  transform: none !important;
+  display: block !important;
+}
+
+.footer-credits-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  letter-spacing: 1.4px;
+  color: #3d4f3a;
+}
+
+.leora-link {
+  color: #b07d50;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: 600;
+  font-style: normal;
+  transition: color 0.25s ease;
+}
+
+.leora-link:hover {
+  color: #354632;
+}
+
+/* ==========================================
+   FLOATING AUDIO BUTTON
+   ========================================== */
+
+.audio-btn {
+  position: fixed;
+  bottom: 24px;
+  right: calc(50vw - 200px);
+  z-index: 1000;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(53, 70, 50, 0.2);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #3d4f3a;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+@media (max-width: 480px) {
+  .audio-btn {
+    right: 20px;
+  }
+}
+
+.audio-btn:hover {
+  transform: scale(1.08);
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.speaker-icon {
+  width: 20px;
+  height: 20px;
+  display: none;
+}
+
+.audio-btn.playing .icon-playing {
+  display: block;
+}
+
+.audio-btn.muted .icon-muted {
+  display: block;
+}
+
+/* Pulsating Wave Ring when Music is Playing */
+.audio-btn.playing::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(53, 70, 50, 0.4);
+  animation: audioPulse 2s infinite ease-out;
+  pointer-events: none;
+}
+
+@keyframes audioPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}

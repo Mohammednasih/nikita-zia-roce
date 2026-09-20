@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Nikita &amp; Zia &bull; ROCE Ceremony Invitation</title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Nikita &amp; Zia &bull; ROCE Ceremony Invitation" />
+  <meta name="description" content="We invite you to celebrate our ROCE Ceremony on 08 December 2026 at Siolim, Goa. Click to open our digital invitation." />
+  <meta name="keywords" content="Nikita Fernandes, Zia Shaikh, ROCE Invitation, Siolim Goa, Wedding Invitation, Digital Invitation" />
+  <meta name="author" content="Leora" />
+
+  <!-- Open Graph / WhatsApp / Instagram / Facebook / iMessage Sharing Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nikita-zia-roce.vercel.app/" />
+  <meta property="og:site_name" content="nikita-zia-roce.vercel.app" />
+  <meta property="og:title" content="Nikita &amp; Zia &bull; ROCE Ceremony Invitation" />
+  <meta property="og:description" content="We invite you to celebrate our ROCE Ceremony on 08 December 2026 at Siolim, Goa. Click to open our digital invitation." />
+  <meta property="og:image" content="https://nikita-zia-roce.vercel.app/assets/cover.png" />
+  <meta property="og:image:secure_url" content="https://nikita-zia-roce.vercel.app/assets/cover.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Nikita &amp; Zia ROCE Invitation Cover" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://nikita-zia-roce.vercel.app/" />
+  <meta name="twitter:title" content="Nikita &amp; Zia &bull; ROCE Ceremony Invitation" />
+  <meta name="twitter:description" content="We invite you to celebrate our ROCE Ceremony on 08 December 2026 at Siolim, Goa. Click to open our digital invitation." />
+  <meta name="twitter:image" content="https://nikita-zia-roce.vercel.app/assets/cover.png" />
+
+  <!-- Favicon / Touch Icon -->
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Pinyon+Script&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Mobile Container Wrapper -->
+  <div class="mobile-frame frame-locked">
+    
+    <!-- ENTRANCE BLUR OVERLAY SCREEN -->
+    <div class="entrance-overlay" id="entranceOverlay" onclick="var ov=this; ov.style.opacity='0'; ov.style.pointerEvents='none'; setTimeout(function(){ov.style.display='none';},600); var mf=document.querySelector('.mobile-frame'); if(mf){mf.classList.remove('frame-locked');} if(window.checkScrollAnim){window.checkScrollAnim();}">
+      <div class="entrance-content">
+        <div class="entrance-monogram">
+          <img src="assets/logo.png" alt="Nikita &amp; Zia Monogram" class="entrance-logo" />
+        </div>
+        <h2 class="entrance-couples-names">Nikita &amp; Zia</h2>
+        <p class="entrance-tagline">ROCE CEREMONY</p>
+        <button class="open-invitation-btn" id="openInviteBtn" type="button" aria-label="Open Invitation" onclick="event.stopPropagation(); var ov=document.getElementById('entranceOverlay'); if(ov){ov.style.opacity='0'; ov.style.pointerEvents='none'; setTimeout(function(){ov.style.display='none';},600);} var mf=document.querySelector('.mobile-frame'); if(mf){mf.classList.remove('frame-locked');} if(window.checkScrollAnim){window.checkScrollAnim();}">
+          <span>OPEN INVITATION</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- PAGE 1: Hero / First Section -->
+    <section class="invitation-section section-first" id="section-1">
+      
+      <!-- Background Image Container -->
+      <div class="bg-layer" style="background-image: url('assets/first.png');"></div>
+
+      <!-- Main Overlay Content -->
+      <div class="content-layer">
+        
+        <!-- Top Monogram Logo -->
+        <div class="logo-wrapper scroll-anim">
+          <img src="assets/logo.png" alt="Monogram Logo" class="monogram-logo" />
+        </div>
+
+        <!-- Couple Names -->
+        <div class="names-wrapper scroll-anim">
+          <h1 class="couple-names">Nikita &amp; Zia</h1>
+        </div>
+
+        <!-- Invitation Tagline -->
+        <div class="invitation-subtitle scroll-anim">
+          <p class="caps-text">INVITE YOU TO CELEBRATE</p>
+          <p class="caps-text bold-text">OUR ROCE CEREMONY</p>
+        </div>
+
+        <!-- Location Section -->
+        <div class="location-wrapper scroll-anim">
+          <p class="in-text">IN</p>
+          <p class="location-name">Siolim, Goa</p>
+        </div>
+
+        <!-- Date Section -->
+        <div class="date-wrapper scroll-anim">
+          <div class="date-numeric-row">
+            <span>08</span>
+            <span class="dot">&bull;</span>
+            <span>12</span>
+            <span class="dot">&bull;</span>
+            <span>2026</span>
+          </div>
+        </div>
+
+        <!-- Bottom Scroll CTA -->
+        <div class="scroll-cta scroll-anim" id="scrollDownBtn">
+          <p class="caps-text spacing-wide">KEEP SCROLLING</p>
+          <div class="scroll-arrow">
+            <svg width="22" height="12" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L9 8.5L17 1" stroke="#3d4e3a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PAGE 2: Countdown Section -->
+    <section class="invitation-section section-countdown" id="section-2">
+      
+      <!-- Soft Cream Parchment Background + Map Texture -->
+      <div class="cream-bg-layer"></div>
+
+      <!-- Island Shore Asset (Bottom Center) -->
+      <div class="shore-wrapper">
+        <img src="assets/shore.png" alt="Maldives Shore" class="shore-img" />
+      </div>
+
+      <!-- Tall Animated Coconut Palm Trees framing screen -->
+      <div class="palm-container palm-container-left">
+        <img src="assets/cocunut.png" alt="Coconut Palm Tree Left" class="coconut-tree tree-left" />
+      </div>
+
+      <div class="palm-container palm-container-right">
+        <img src="assets/cocunut.png" alt="Coconut Palm Tree Right" class="coconut-tree tree-right" />
+      </div>
+
+      <!-- Main Countdown Content Overlay -->
+      <div class="countdown-content-layer">
+        
+        <!-- Countdown Header -->
+        <div class="countdown-header">
+          <h2 class="countdown-title scroll-anim">Countdown</h2>
+          <p class="countdown-subtitle scroll-anim">UNTIL 08 DECEMBER 2026</p>
+        </div>
+
+        <!-- Countdown Display (Days, Hours, Minutes) -->
+        <div class="countdown-grid scroll-anim">
+          
+          <div class="count-box">
+            <span class="count-val" id="count-days">00</span>
+            <span class="count-label">DAYS</span>
+          </div>
+
+          <div class="count-divider"></div>
+
+          <div class="count-box">
+            <span class="count-val" id="count-hours">00</span>
+            <span class="count-label">HOURS</span>
+          </div>
+
+          <div class="count-divider"></div>
+
+          <div class="count-box">
+            <span class="count-val" id="count-mins">00</span>
+            <span class="count-label">MINUTES</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PAGE 3: The Celebrations Section -->
+    <section class="invitation-section section-celebrations" id="section-3">
+      
+      <!-- Parchment Background -->
+      <div class="cream-bg-layer"></div>
+
+      <!-- Hanging String Light Garlands Top Header -->
+      <div class="light-garland-wrapper">
+        <img src="assets/light.png" alt="Hanging String Lights" class="light-garland-img" />
+      </div>
+
+      <!-- Main Content Overlay for Page 3 -->
+      <div class="celebrations-content-layer">
+        
+        <!-- Section Title -->
+        <div class="celebrations-header">
+          <h2 class="celebrations-title scroll-anim">The Celebrations</h2>
+        </div>
+
+        <!-- Vertical Event Program List -->
+        <div class="events-program-list">
+          
+          <!-- Event 1 -->
+          <div class="event-program-item scroll-anim">
+            <h3 class="event-program-title">Roce Ceremony</h3>
+            <p class="event-program-details">Coconut Milk Blessing &amp; Rituals</p>
+          </div>
+
+          <div class="event-item-divider scroll-anim"></div>
+
+          <!-- Event 2 -->
+          <div class="event-program-item scroll-anim">
+            <h3 class="event-program-title">Welcome Dinner</h3>
+            <p class="event-program-details">Siolim Riverfront</p>
+          </div>
+
+          <div class="event-item-divider scroll-anim"></div>
+
+          <!-- Event 3 -->
+          <div class="event-program-item scroll-anim">
+            <h3 class="event-program-title">Music &amp; Celebration</h3>
+            <p class="event-program-details">Dancing &amp; Cocktails &middot; Till Late</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PAGE 4: The Venue Section -->
+    <section class="invitation-section section-venue" id="section-4">
+      
+      <!-- Parchment Background -->
+      <div class="cream-bg-layer"></div>
+
+      <!-- Main Content Overlay for Page 4 -->
+      <div class="venue-content-layer">
+        
+        <!-- Section Title -->
+        <div class="venue-header">
+          <h2 class="venue-title scroll-anim">The Venue</h2>
+        </div>
+
+        <!-- Standalone Resort Watercolor Artwork (No Card Container) -->
+        <div class="venue-image-wrapper scroll-anim">
+          <img src="assets/resort.png" alt="Stone Wood Riverfront Resort" class="venue-standalone-img" />
+        </div>
+
+        <!-- Venue Details Box -->
+        <div class="venue-details-box scroll-anim">
+          <h3 class="venue-name-main">STONE WOOD</h3>
+          <p class="venue-name-sub">RIVERFRONT RESORT</p>
+          <p class="venue-location-tag">SIOLIM, GOA</p>
+        </div>
+
+        <!-- Get Directions Map Button -->
+        <div class="venue-actions scroll-anim">
+          <a href="https://maps.google.com/?q=Stone+Wood+Riverfront+Resort+Siolim+Goa" target="_blank" rel="noopener" class="map-link-btn">
+            <svg class="map-pin-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>GET DIRECTIONS</span>
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PAGE 5: Dress Code Section -->
+    <section class="invitation-section section-dresscode" id="section-5">
+      
+      <!-- Parchment Background Layer -->
+      <div class="cream-bg-layer"></div>
+
+      <!-- Main Content Overlay for Page 5 -->
+      <div class="dresscode-content-layer">
+        
+        <!-- Dress Code Box -->
+        <div class="dresscode-box">
+          <p class="dresscode-caps-label scroll-anim">DRESS CODE</p>
+          <h2 class="dresscode-title scroll-anim">TROPICAL CHIC</h2>
+          <p class="dresscode-tagline scroll-anim">Think palms, prints &amp; paradise.</p>
+          
+          <div class="mantra-line-wrapper scroll-anim">
+            <p class="bottom-mantra">SIP SLOWLY &bull; DANCE FREELY &bull; CELEBRATE WILDLY</p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PAGE 6: Final Page / Footer Section -->
+    <section class="invitation-section section-footer" id="section-6">
+      
+      <!-- Parchment Background Layer -->
+      <div class="cream-bg-layer"></div>
+
+      <!-- Content Overlay for Page 6 -->
+      <div class="footer-content-layer">
+        
+        <!-- Monogram Logo -->
+        <div class="footer-logo-wrapper scroll-anim">
+          <img src="assets/logo.png" alt="Nikita &amp; Zia Monogram" class="footer-monogram-logo" />
+        </div>
+
+        <!-- Couple Names -->
+        <div class="footer-names-wrapper scroll-anim">
+          <h2 class="footer-couple-names">Nikita &amp; Zia</h2>
+        </div>
+
+        <!-- Date -->
+        <div class="footer-date-wrapper scroll-anim">
+          <p class="footer-wedding-date">08 DECEMBER 2026</p>
+        </div>
+
+        <!-- Made with love by Leora Instagram link -->
+        <div class="footer-credits-wrapper">
+          <p class="footer-credits-text">
+            Made with love by <a href="https://instagram.com/Leora.invite" target="_blank" rel="noopener" class="leora-link">Leora</a>
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Background Audio Element -->
+    <audio id="bgMusic" src="assets/Fireflies.mp3" loop preload="auto"></audio>
+
+    <!-- Floating Audio Toggle Button -->
+    <button class="audio-btn muted" id="audioToggle" aria-label="Toggle Audio">
+      <!-- Playing Icon -->
+      <svg class="speaker-icon icon-playing" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"/>
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07" stroke-linecap="round"/>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14" stroke-linecap="round"/>
+      </svg>
+      <!-- Muted Icon -->
+      <svg class="speaker-icon icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"/>
+        <line x1="23" y1="1" x2="1" y2="23" stroke="currentColor" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
