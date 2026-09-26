@@ -491,28 +491,34 @@ html, body {
 }
 
 .tree-left {
-  animation: swayLeft 7s ease-in-out infinite alternate;
+  animation: swayLeft 5.8s ease-in-out infinite;
 }
 
 .tree-right {
-  animation: swayRight 8s ease-in-out infinite alternate;
+  animation: swayRight 6.4s ease-in-out infinite;
 }
 
 @keyframes swayLeft {
   0% {
-    transform: rotate(0deg) translateY(0);
+    transform: rotate(-1.6deg) translateY(0);
+  }
+  50% {
+    transform: rotate(4deg) translateY(-4px) translateX(2px);
   }
   100% {
-    transform: rotate(2.8deg) translateY(-2px) translateX(1px);
+    transform: rotate(-1.6deg) translateY(0);
   }
 }
 
 @keyframes swayRight {
   0% {
-    transform: scaleX(-1) rotate(0deg) translateY(0);
+    transform: scaleX(-1) rotate(1.6deg) translateY(0);
+  }
+  50% {
+    transform: scaleX(-1) rotate(-4deg) translateY(-4px) translateX(-2px);
   }
   100% {
-    transform: scaleX(-1) rotate(3deg) translateY(-2px) translateX(-1px);
+    transform: scaleX(-1) rotate(1.6deg) translateY(0);
   }
 }
 
@@ -1057,3 +1063,226 @@ html, body {
     opacity: 0;
   }
 }
+/* ==========================================
+   TROPICAL BOTANICAL CORNER - PAGE 3
+   ========================================== */
+
+/* ==========================================
+   TROPICAL LEAF - LEFT
+   ========================================== */
+
+/* ==========================================
+   TROPICAL LEAF - LEFT
+   ========================================== */
+
+.tropical-leaf-corner {
+  position: absolute;
+  top: 100px;
+  left: -10px;
+  width: 180px;
+  height: 250px;
+  z-index: 2;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.tropical-leaf-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+
+  transform-origin: top center;
+  animation: tropicalWindLeft 5s ease-in-out infinite alternate;
+}
+
+
+/* ==========================================
+   TROPICAL LEAF - RIGHT
+   ========================================== */
+
+.tropical-leaf-corner-right {
+  position: absolute;
+  top: 100px;
+  right: -10px;
+  width: 180px;
+  height: 250px;
+  z-index: 2;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.tropical-leaf-img-right {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+
+  transform-origin: top center;
+  animation: tropicalWindRight 5.5s ease-in-out infinite alternate;
+}
+
+
+/* ==========================================
+   WIND ANIMATION - LEFT
+   ========================================== */
+
+@keyframes tropicalWindLeft {
+
+  0% {
+    transform: rotate(-1deg) translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: rotate(3deg) translate3d(2px, 1px, 0);
+  }
+
+  100% {
+    transform: rotate(-2deg) translate3d(-1px, 0, 0);
+  }
+
+}
+
+
+/* ==========================================
+   WIND ANIMATION - RIGHT
+   ========================================== */
+
+@keyframes tropicalWindRight {
+
+  0% {
+    transform: scaleX(-1) rotate(1deg) translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: scaleX(-1) rotate(-3deg) translate3d(-2px, 1px, 0);
+  }
+
+  100% {
+    transform: scaleX(-1) rotate(2deg) translate3d(1px, 0, 0);
+  }
+
+}
+/* ==========================================
+   TROPICAL FOOTER
+   ========================================== */
+
+.tropical-footer {
+  position: absolute;
+
+  bottom: -5px;
+  left: 0;
+
+  width: 100%;
+  height: 250px;
+
+  z-index: 3;
+
+  pointer-events: none;
+
+  overflow: visible;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  animation: tropicalFooterWind 7s ease-in-out infinite;
+}
+
+
+/* Footer image */
+
+.tropical-footer-img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+  transform-origin: bottom center;
+}
+
+
+/* ==========================================
+   GENTLE TROPICAL WIND
+   ========================================== */
+
+@keyframes tropicalFooterWind {
+
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  25% {
+    transform: translate3d(2px, -1px, 0) rotate(0.3deg);
+  }
+
+  50% {
+    transform: translate3d(0, -3px, 0) rotate(0deg);
+  }
+
+  75% {
+    transform: translate3d(-2px, -1px, 0) rotate(-0.3deg);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+}
+
+.tropical-floral-divider {
+  width: 100%;
+  height: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: -30px auto 0 auto;
+
+  position: relative;
+  left: 0;
+
+  z-index: 5;
+  pointer-events: none;
+}
+
+.tropical-floral-divider-img {
+  width: 60%;
+  max-width: 360px;
+  height: auto;
+
+  display: block;
+  margin: 0 auto;
+
+  object-fit: contain;
+}
+/* ==========================================
+   NATURAL FALLING TROPICAL LEAVES
+   ========================================== */
+
+/* ==========================================
+   GLOBAL FALLING TROPICAL LEAVES
+   ========================================== */
+
+.falling-leaves {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 9999;
+}
+
+
+/* Individual leaf */
+
