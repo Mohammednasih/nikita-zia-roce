@@ -2,9 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const mobileFrame = document.querySelector('.mobile-frame');
   const animElements = document.querySelectorAll('.scroll-anim');
+  let invitationUnlocked = false;
 
   // 1. Smooth Scroll Reveal Animation Function
   function checkScrollAnim() {
+    if (!invitationUnlocked) return;
+
     const frameRect = mobileFrame ? mobileFrame.getBoundingClientRect() : { top: 0 };
     const frameHeight = mobileFrame ? mobileFrame.clientHeight : window.innerHeight;
 
@@ -67,7 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const openInviteBtn = document.getElementById('openInviteBtn');
 
   function unlockInvitation() {
-    if (!entranceOverlay) return;
+    if (!entranceOverlay || invitationUnlocked) return;
+    invitationUnlocked = true;
     
     // Start playing background music on user gesture
     playMusic();
@@ -81,8 +85,12 @@ document.addEventListener('DOMContentLoaded', () => {
       entranceOverlay.classList.add('hidden');
     }, 600);
 
-    // Initial check for hero section animations
-    setTimeout(checkScrollAnim, 100);
+    // Reveal only the hero content when the invitation first opens.
+    setTimeout(() => {
+      document.querySelectorAll('.section-first .scroll-anim').forEach(el => {
+        el.classList.add('in-view');
+      });
+    }, 100);
   }
 
   if (openInviteBtn) {
@@ -178,75 +186,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 8. Active Scroll Event Listeners for Section-by-Section Reveal
-  checkScrollAnim();
-  setTimeout(checkScrollAnim, 200);
-
   if (mobileFrame) {
     mobileFrame.addEventListener('scroll', checkScrollAnim, { passive: true });
   }
   window.addEventListener('scroll', checkScrollAnim, { passive: true });
-  // 9. Continuous Botanical Border
-  const leftBorder = document.querySelector('.tropical-leaf-border-left');
-  const rightBorder = document.querySelector('.tropical-leaf-border-right');
-
-  function createBorderStack() {
-    if (!mobileFrame || !leftBorder || !rightBorder) return;
-
-    const borderImage = 'assets/border.png';
-
-    // Clear existing images
-    leftBorder.innerHTML = '';
-    rightBorder.innerHTML = '';
-
-    // Total height of the complete invitation
-    const totalHeight = mobileFrame.scrollHeight;
-
-    // Border starts 200px from top
-    const startTop = 200;
-
-    // Create one temporary image to get the real image height
-    const testImg = new Image();
-
-    testImg.onload = function () {
-
-      // Keep the original width
-      const borderWidth = 135;
-
-      // Calculate natural aspect ratio
-      const imageRatio = testImg.naturalHeight / testImg.naturalWidth;
-
-      // Real displayed height
-      const imageHeight = borderWidth * imageRatio;
-
-      // How many images are needed to reach the bottom
-      const numberOfImages =
-        Math.ceil((totalHeight - startTop) / imageHeight) + 1;
-
-      // Create the stack
-      for (let i = 0; i < numberOfImages; i++) {
-
-        const leftImg = document.createElement('img');
-        leftImg.src = borderImage;
-        leftImg.alt = '';
-
-        const rightImg = document.createElement('img');
-        rightImg.src = borderImage;
-        rightImg.alt = '';
-
-        leftBorder.appendChild(leftImg);
-        rightBorder.appendChild(rightImg);
-      }
-    };
-
-    testImg.src = borderImage;
-  }
-
-  // Initial build
-  createBorderStack();
-
-  // Rebuild after everything loads
-  window.addEventListener('load', createBorderStack);
-
-  // Rebuild when screen size changes
-  window.addEventListener('resize', createBorderStack);
 });
