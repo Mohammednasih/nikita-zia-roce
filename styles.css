@@ -173,6 +173,9 @@ html, body {
   background-color: #f5efe4;
 }
 
+
+
+
 /* ==========================================
    ELEGANT SCROLL ANIMATIONS FOR ALL TEXTS
    ========================================== */
@@ -205,19 +208,6 @@ html, body {
   min-height: 100vh;
   height: 100vh;
   position: relative;
-}
-
-.section-first::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 25vh;
-  min-height: 160px;
-  background: linear-gradient(to bottom, rgba(245, 239, 228, 0) 0%, rgba(245, 239, 228, 0.4) 40%, rgba(245, 239, 228, 0.85) 75%, #f5efe4 100%);
-  z-index: 2;
-  pointer-events: none;
 }
 
 .bg-layer {
@@ -332,7 +322,7 @@ html, body {
   justify-content: center;
   gap: 12px;
   font-family: 'Cinzel', serif;
-  font-size: 1.25rem;
+  font-size: 1.6rem;
   font-weight: 600;
   letter-spacing: 3.5px;
   color: #354632;
@@ -386,18 +376,6 @@ html, body {
   height: auto;
   padding-bottom: 0;
   position: relative;
-}
-
-.section-countdown::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  background: linear-gradient(to bottom, rgba(245, 239, 228, 0) 0%, rgba(245, 239, 228, 0.6) 50%, #f5efe4 100%);
-  z-index: 5;
-  pointer-events: none;
 }
 
 .cream-bg-layer {
@@ -486,8 +464,6 @@ html, body {
   object-fit: contain;
   display: block;
   transform-origin: bottom center;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 96%);
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 96%);
 }
 
 .tree-left {
@@ -676,7 +652,7 @@ html, body {
 
 .event-program-title {
   font-family: 'Pinyon Script', cursive;
-  font-size: 2.35rem;
+  font-size: 2.1rem;
   font-weight: 400;
   color: #354632;
   line-height: 1.15;
@@ -687,9 +663,9 @@ html, body {
 .event-program-details {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 0.95rem;
+  font-size: 1.8rem;
   letter-spacing: 1.4px;
-  color: #3d4f3a;
+  color: #0f0f0f;
   font-weight: 500;
 }
 
@@ -881,7 +857,7 @@ html, body {
 
 .dresscode-title {
   font-family: 'Cinzel', serif;
-  font-size: 1.4rem;
+  font-size: 1.0rem;
   font-weight: 600;
   letter-spacing: 4px;
   color: #b07d50; /* Terracotta rose gold accent matching reference */
@@ -891,7 +867,7 @@ html, body {
 
 .dresscode-tagline {
   font-family: 'Pinyon Script', cursive;
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   font-weight: 400;
   color: #354632;
   line-height: 1.2;
@@ -1122,6 +1098,41 @@ html, body {
   animation: tropicalWindRight 5.5s ease-in-out infinite alternate;
 }
 
+/* CONTINUOUS BOTANICAL BORDER */
+
+.section-celebrations .cream-bg-layer::before,
+.section-celebrations .cream-bg-layer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 135px;
+  background-image: url('assets/border.png');
+  background-repeat: repeat-y;
+  background-size: 135px auto;
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.section-celebrations .cream-bg-layer::before,
+.section-celebrations .cream-bg-layer::after {
+  top: 200px;
+}
+
+.section-celebrations .cream-bg-layer::before,
+.section-venue .cream-bg-layer::before,
+.section-dresscode .cream-bg-layer::before,
+.section-footer .cream-bg-layer::before {
+  left: -25px;
+}
+
+.section-celebrations .cream-bg-layer::after,
+.section-venue .cream-bg-layer::after,
+.section-dresscode .cream-bg-layer::after,
+.section-footer .cream-bg-layer::after {
+  right: -25px;
+  transform: scaleX(-1);
+}
 
 /* ==========================================
    WIND ANIMATION - LEFT
@@ -1250,8 +1261,8 @@ html, body {
 }
 
 .tropical-floral-divider-img {
-  width: 60%;
-  max-width: 360px;
+  width: 100%;
+  max-width: 150px;
   height: auto;
 
   display: block;
@@ -1282,7 +1293,3 @@ html, body {
 
     z-index: 9999;
 }
-
-
-/* Individual leaf */
-
