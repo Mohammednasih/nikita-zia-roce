@@ -101,9 +101,6 @@ html, body {
   width: 75px;
   height: auto;
   object-fit: contain;
-  mix-blend-mode: multiply;
-  filter: sepia(0.8) hue-rotate(60deg) saturate(0.9) brightness(0.65) contrast(1.2);
-  opacity: 0.95;
 }
 
 .entrance-couples-names {
@@ -261,12 +258,9 @@ html, body {
 }
 
 .monogram-logo {
-  width: 90px;
+  width: 150px;
   height: auto;
   object-fit: contain;
-  mix-blend-mode: multiply;
-  filter: sepia(0.8) hue-rotate(60deg) saturate(0.9) brightness(0.65) contrast(1.2);
-  opacity: 0.95;
 }
 
 .names-wrapper {
@@ -277,12 +271,12 @@ html, body {
 
 .couple-names {
   font-family: 'Pinyon Script', cursive;
-  font-size: 3.6rem;
-  font-weight: 400;
-  color: #354632;
+  font-size: 3.8rem;
+  font-weight: 600;
+  color: #f6f8f6;
   line-height: 1.1;
   letter-spacing: 0.2px;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+  text-shadow: 0 1px 2px rgba(76, 71, 71, 0.6);
   white-space: nowrap;
 }
 
@@ -299,6 +293,7 @@ html, body {
   color: #3d4f3a;
   line-height: 1.65;
 }
+
 
 .bold-text {
   font-weight: 600;
@@ -801,6 +796,10 @@ html, body {
   margin-bottom: 8px;
 }
 
+.section-first .location-wrapper .venue-name-sub {
+  font-weight: 700;
+}
+
 .venue-location-tag {
   font-family: 'Cinzel', serif;
   font-size: 0.78rem;
@@ -905,15 +904,22 @@ html, body {
 }
 
 .dresscode-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.8rem;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(0.78rem, 3.8vw, 1rem);
+  font-style: italic;
   font-weight: 400;
-  letter-spacing: 4px;
+  letter-spacing: 0.2px;
+  line-height: 1.5;
   color: #b07d50;
   margin-bottom: 6px;
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
 
   text-transform: none;
+}
+
+.dresscode-line {
+  display: block;
+  white-space: nowrap;
 }
 
 .dresscode-tagline {
@@ -954,12 +960,11 @@ html, body {
 }
 
 .footer-monogram-logo {
-  width: 90px;
+  width: 120px;
   height: auto;
   object-fit: contain;
-  mix-blend-mode: multiply;
-  filter: sepia(0.8) hue-rotate(60deg) saturate(0.9) brightness(0.65) contrast(1.2);
-  opacity: 0.95;
+ ;
+ 
 }
 
 .footer-names-wrapper {
